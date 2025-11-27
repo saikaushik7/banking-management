@@ -1,129 +1,169 @@
 Banking Management System
 
 This is a backend Banking Management System built using Java, Spring Boot, MySQL, and REST APIs.
-
-This project allows an Admin to manage users and allows users to perform banking operations like creating accounts, depositing money, withdrawing money, transferring funds, and viewing transaction history.
+The project supports admin-controlled user management and provides core banking operations such as account creation, deposit, withdrawal, fund transfer, and transaction history tracking.
 
 Features
-
 User Management
+
 Admin can create users
+
 Users cannot self-register
-Users can log in
+
+Users can log in securely
 
 Bank Account Management
-Users can create bank accounts
-Users can check account balance
-Users can deposit money
-Users can withdraw money
-Users can transfer money to another account
+
+Create bank accounts
+
+Check account balance
+
+Deposit money
+
+Withdraw money
+
+Transfer money between accounts
 
 Transaction Management
-Users can view full transaction history
+
+View complete transaction history for accounts
 
 Technologies Used
 
-Java
+Java 17
+
 Spring Boot
+
 Spring Data JPA
+
 MySQL
+
 Maven
+
 REST API
+
 Postman
+
 Git and GitHub
 
-API Operations (How Each Feature Works)
+API Operations
 1. Create User (Admin Only)
 
-Used to create a new user.
-
-Request:
+Endpoint
 POST /api/users/create
 
-Parameters:
-username – the new user name
+Parameters
+
+username – name of the new user
+
 password – user password
+
 role – USER or ADMIN
 
 2. Login User
 
-Used for logging in a user.
-
-Request:
+Endpoint
 POST /api/users/login
 
-Parameters:
+Parameters
+
 username – user name
+
 password – user password
 
 3. Create Bank Account
 
-Used to create a new bank account.
-
-Request:
+Endpoint
 POST /api/accounts/create
 
-Parameters:
-ownerName – name of account holder
+Parameters
+
+ownerName – account holder name
+
 balance – initial balance
 
 4. View Account Details
 
-Used to fetch account details.
-
-Request:
+Endpoint
 GET /api/accounts/{id}
 
-Returns account id, owner name, and balance
+Returns
+
+Account ID
+
+Owner name
+
+Account balance
 
 5. Deposit Money
 
-Used to add money to an account.
-
-Request:
+Endpoint
 POST /api/accounts/deposit?id=&amount=
 
-Parameters:
-id – account id
+Parameters
+
+id – account ID
+
 amount – money to deposit
 
 6. Withdraw Money
 
-Used to remove money from an account.
-
-Request:
+Endpoint
 POST /api/accounts/withdraw?id=&amount=
 
-Parameters:
-id – account id
+Parameters
+
+id – account ID
+
 amount – money to withdraw
 
 7. Transfer Money
 
-Used to transfer money between accounts.
-
-Request:
+Endpoint
 POST /api/accounts/transfer?fromId=&toId=&amount=
 
-Parameters:
-fromId – sender account id
-toId – receiver account id
-amount – money to transfer
+Parameters
+
+fromId – sender account ID
+
+toId – receiver account ID
+
+amount – amount to transfer
 
 8. View Transaction History
 
-Used to view all transactions for an account.
-
-Request:
+Endpoint
 GET /api/transactions/{accountId}
 
-Returns list of all transactions
+Returns
+
+List of all transactions for the account
+
+Project Structure
+
+controller – Handles API requests
+
+service – Business logic layer
+
+repository – Database layer
+
+entity – Database entity classes
 
 API Testing
 
 All APIs were tested using Postman.
 
-Developer Details
+Future Improvements
+
+Add JWT based authentication
+
+Add role-based authorization
+
+Add pagination for transaction history
+
+Add frontend using Angular or React
+
+Developer
 
 Name: Sai Kaushik
 GitHub: https://github.com/saikaushik7
